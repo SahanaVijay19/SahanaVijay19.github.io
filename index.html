@@ -459,9 +459,10 @@
   .stat-label{ font-size: 0.82rem; margin-top: 6px; color: rgba(247,241,226,0.75); }
 
   .before-after{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap: 20px;
   }
   .before-after figure{
     margin:0;
@@ -469,7 +470,7 @@
   }
   .before-after img{
     max-width: 100%;
-    max-height: 280px;
+    max-height: 380px;
     width: auto;
     height: auto;
   }
@@ -482,8 +483,17 @@
     color: var(--gold);
     font-weight:600;
   }
+  .ba-arrow{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    color: var(--gold);
+  }
+  .ba-arrow svg{ width:38px; height:38px; }
   @media (max-width: 640px){
-    .before-after{ grid-template-columns: 1fr; }
+    .before-after{ flex-direction: column; }
+    .ba-arrow svg{ transform: rotate(90deg); }
   }
 
   .impact-list{ list-style:none; margin:0; padding:0; display:grid; gap:12px; }
@@ -858,6 +868,9 @@
             <img src="assets/navbar-before.png" alt="Slug Housing navigation before redesign — text-only bottom links">
             <figcaption>Before</figcaption>
           </figure>
+          <div class="ba-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 12H22M22 12L15 5M22 12L15 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
           <figure>
             <img src="assets/navbar-after.png" alt="Slug Housing navigation after redesign — icon bar with active state">
             <figcaption>After</figcaption>
@@ -873,6 +886,9 @@
             <img src="assets/landing-before.png" alt="Slug Housing landing page before redesign — plain white screen">
             <figcaption>Before</figcaption>
           </figure>
+          <div class="ba-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 12H22M22 12L15 5M22 12L15 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
           <figure>
             <img src="assets/landing-after.png" alt="Slug Housing landing page after redesign — forest photo background">
             <figcaption>After</figcaption>

@@ -9,15 +9,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy:#16304F;
-    --navy-deep:#0E2138;
-    --cream:#F7F1E2;
+    --navy:#4C5A82;
+    --navy-deep:#55628A;
+    --cream:#EAF4FB;
     --paper:#FFFFFF;
-    --gold:#C9982F;
-    --sage:#5C7A5F;
-    --ink:#26241F;
-    --muted:#6B6459;
-    --line: rgba(22,48,79,0.14);
+    --gold:#A84571;
+    --gold-light:#F3C9DE;
+    --sage:#2F7A64;
+    --ink:#3D3D52;
+    --muted:#5C5C74;
+    --line: rgba(85,98,138,0.15);
     --radius: 4px;
   }
 
@@ -66,7 +67,7 @@
     position: sticky;
     top:0;
     z-index: 50;
-    background: rgba(247,241,226,0.88);
+    background: rgba(234,244,251,0.88);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--line);
   }
@@ -211,6 +212,15 @@
   }
   .about-grid p{ font-size: 1.03rem; color: var(--ink); }
   .about-grid p + p{ margin-top: 16px; }
+  .about-photo{
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    object-position: 50% 20%;
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+    border: 1px solid var(--line);
+  }
   .fact-list{
     border-top: 1px solid var(--line);
   }
@@ -226,6 +236,38 @@
 
   @media (max-width: 780px){
     .about-grid{ grid-template-columns: 1fr; }
+  }
+
+  .beyond-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .beyond-card{
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+  }
+  .beyond-icon{
+    font-size: 1.8rem;
+    display:block;
+    margin-bottom: 14px;
+  }
+  .beyond-card h4{
+    font-family:'Inter', sans-serif;
+    font-weight:700;
+    font-size: 1.02rem;
+    color: var(--navy-deep);
+    margin-bottom: 8px;
+  }
+  .beyond-card p{
+    font-size: 0.92rem;
+    color: var(--muted);
+    margin:0;
+  }
+  @media (max-width: 780px){
+    .beyond-grid{ grid-template-columns: 1fr; }
   }
 
   /* ---------- SKILLS ---------- */
@@ -325,18 +367,18 @@
     gap: 40px;
     align-items:center;
   }
-  .case-hero .eyebrow{ color: var(--gold); }
+  .case-hero .eyebrow{ color: var(--gold-light); }
   .case-hero h3{
     color: var(--cream);
     font-size: clamp(1.6rem, 3vw, 2.1rem);
     margin-top: 10px;
   }
-  .case-hero p{ color: rgba(247,241,226,0.78); margin-top: 14px; font-size: 0.98rem; }
+  .case-hero p{ color: rgba(234,244,251,0.85); margin-top: 14px; font-size: 0.98rem; }
   .case-tags{ margin-top:20px; display:flex; gap:8px; flex-wrap:wrap; }
   .case-tags span{
     font-family:'JetBrains Mono', monospace;
     font-size: 0.72rem;
-    border: 1px solid rgba(247,241,226,0.3);
+    border: 1px solid rgba(234,244,251,0.35);
     padding: 5px 10px;
     border-radius: 100px;
     color: var(--cream);
@@ -453,10 +495,10 @@
   .stat-num{
     font-family:'JetBrains Mono', monospace;
     font-size: 2rem;
-    color: var(--gold);
+    color: var(--gold-light);
     font-weight:700;
   }
-  .stat-label{ font-size: 0.82rem; margin-top: 6px; color: rgba(247,241,226,0.75); }
+  .stat-label{ font-size: 0.82rem; margin-top: 6px; color: rgba(234,244,251,0.85); }
 
   .before-after{
     display:flex;
@@ -576,7 +618,7 @@
 
   <section class="hero">
     <svg class="hero-grid" viewBox="0 0 1040 420" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-      <g stroke="#16304F" stroke-opacity="0.10" stroke-width="1">
+      <g stroke="#55628A" stroke-opacity="0.12" stroke-width="1">
         <line x1="760" y1="40" x2="900" y2="120"/>
         <line x1="900" y1="120" x2="900" y2="230"/>
         <line x1="900" y1="120" x2="1020" y2="90"/>
@@ -584,7 +626,7 @@
         <line x1="900" y1="230" x2="800" y2="300"/>
         <line x1="760" y1="40" x2="640" y2="60"/>
       </g>
-      <g fill="#C9982F" fill-opacity="0.55">
+      <g fill="#A84571" fill-opacity="0.55">
         <circle cx="760" cy="40" r="4"/>
         <circle cx="900" cy="120" r="5"/>
         <circle cx="900" cy="230" r="4"/>
@@ -622,12 +664,39 @@
           <p>Across internships and lab work, I've run usability trials on accessibility interfaces, built analytics dashboards used by executives and investors, and led end-to-end UX research and prototyping for a full product concept. I'm most energized by the fine-grained part of design: the point where a wireframe becomes a decision about typeface, spacing, or a button's state.</p>
         </div>
         <div class="fact-list">
+          <img src="assets/profile.jpg" alt="Sahana Vijay at her UCSC graduation" class="about-photo">
           <div class="fact-row"><span class="k">Degree</span><span class="v">B.S. Cognitive Science</span></div>
           <div class="fact-row"><span class="k">Specialization</span><span class="v">AI &amp; HCI</span></div>
           <div class="fact-row"><span class="k">Minor</span><span class="v">Computer Science</span></div>
           <div class="fact-row"><span class="k">GPA</span><span class="v">3.88</span></div>
           <div class="fact-row"><span class="k">Graduated</span><span class="v">June 2026</span></div>
           <div class="fact-row"><span class="k">Based in</span><span class="v">San Jose, CA</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="beyond">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Beyond Design</span>
+        <h2>A few other things I care about.</h2>
+      </div>
+      <div class="beyond-grid reveal">
+        <div class="beyond-card">
+          <span class="beyond-icon">🌱</span>
+          <h4>Environmental Activism</h4>
+          <p>Co-founded a sustainable menstruation initiative, working to make eco-friendly menstrual products more accessible and reduce plastic waste.</p>
+        </div>
+        <div class="beyond-card">
+          <span class="beyond-icon">📚</span>
+          <h4>Teaching &amp; Tutoring</h4>
+          <p>Worked as a peer notetaker and an English tutor for disadvantaged students — I like making information more accessible, whether that's on a screen or in a classroom.</p>
+        </div>
+        <div class="beyond-card">
+          <span class="beyond-icon">🎬</span>
+          <h4>Fiction, On Page &amp; Screen</h4>
+          <p>A dedicated fan of the world of fiction, whether that's movies or books — especially anything in the action and fantasy genres.</p>
         </div>
       </div>
     </div>
@@ -914,7 +983,7 @@
   <footer id="contact">
     <div class="wrap">
       <div class="contact-grid reveal">
-        <h2>Let's talk about a role, a project, or a problem worth researching.</h2>
+        <h2>I'd love to hear about what you're building — and probably talk your ear off about a good fantasy plot along the way.</h2>
         <div class="contact-links">
           <a href="mailto:sahana9vijay@gmail.com">sahana9vijay@gmail.com</a>
           <a href="tel:14084622544">(408) 462-2544</a>
